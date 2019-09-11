@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-export default ({ children, text, showTime = 1500 }) => {
+export default ({ children, text, showTime = 1000 }) => {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
@@ -10,9 +10,9 @@ export default ({ children, text, showTime = 1500 }) => {
   }, [show, showTime]);
 
   return (
-    <div class="tooltip" onMouseLeave={() => setShow(false)}>
+    <div class="tooltip">
       {children(setShow)}
-      {show && <span class="tooltiptext">{text}</span>}
+      {show && <span className="tooltiptext">{text}</span>}
     </div>
   );
 };
