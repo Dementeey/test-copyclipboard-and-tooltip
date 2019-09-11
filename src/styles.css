@@ -1,0 +1,77 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrapper {
+  position: relative;
+  border: 1px solid darkcyan;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.wrapperDot {
+  width: 100%;
+  padding-right: 10px;
+  overflow: hidden;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.wrapperDotShow::after {
+  content: "…";
+  position: absolute;
+  top: 0;
+  right: 0px;
+  width: 0.875em;
+  height: 100%;
+  padding-right: 10px;
+  font-size: 0.875em;
+  background-color: #fff;
+  line-height: inherit;
+}
+
+.data {
+  width: min-content;
+  width: fit-content;
+  white-space: nowrap;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: 150%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
